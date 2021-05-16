@@ -19,6 +19,6 @@ else:
 
 result = rect1 + rect2
 
-print(f'Result in rectangular form: {result}')
+print(f'Result in rectangular form: {result:.3f}')
 print(f'Result in polar form (radians): {cmath.polar(result)}')
-print(f'Result in polar form (degrees): {abs(result)}^j{numpy.degrees(cmath.phase(result))}')
+print(f'Result in polar form (degrees): {abs(result):.3f}^j{numpy.degrees(cmath.phase(result)):.3f}')

@@ -7,8 +7,8 @@ denominator = complex(96.58, -8.12)
 
 result = numerator / denominator
 
-print(f'Numerator: {numerator}')
-print(f'Denominator: {denominator}')
-print(f'Result: {result}')
+print(f'Numerator: {numerator:.3f}')
+print(f'Denominator: {denominator:.3f}')
+print(f'Result: {result:.3f}')
 print(f'Result in polar form (radians): {cmath.polar(result)}')
-print(f'Result in polar form (degrees): {abs(result)}^j{numpy.degrees(cmath.phase(result))}')
+print(f'Result in polar form (degrees): {abs(result):.3f}^j{numpy.degrees(cmath.phase(result)):.3f}')

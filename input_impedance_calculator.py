@@ -14,9 +14,9 @@ top_over_bottom = numerator / denominator
 
 result = (z_zero * numerator) / denominator
 
-print(f'Numerator: {numerator}')
-print(f'Denominator: {denominator}')
-print(f'Top over bottom: {top_over_bottom}')
-print(f'Result: {result}')
+print(f'Numerator: {numerator:.3f}')
+print(f'Denominator: {denominator:.3f}')
+print(f'Top over bottom: {top_over_bottom:.3f}')
+print(f'Result: {result:.3f}')
 print(f'Result in polar form (radians): {cmath.polar(result)}')
-print(f'Result in polar form (degrees): {abs(result)}^j{numpy.degrees(cmath.phase(result))}')
+print(f'Result in polar form (degrees): {abs(result):.3f}^j{numpy.degrees(cmath.phase(result)):.3f}')
