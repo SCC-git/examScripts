@@ -3,8 +3,8 @@ import cmath
 import numpy
 
 z_zero = 50
-z_load = 75
-length = 0.15                    # wavelengths
+z_load = complex(50, -25)
+length = 0.25                    # wavelengths
 
 z_generator = 50 # if given
 v_generator = 300 # if given

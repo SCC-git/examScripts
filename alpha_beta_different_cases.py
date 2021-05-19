@@ -2,18 +2,18 @@ import math
 import cmath
 import numpy as np
 
-relative_mu = 1
-freq = 10**6
-epsilon_relative = 72
-sigma = 5  # the one in units S/m
+relative_mu = 5
+freq = 1 * 10**9
+epsilon_relative = 30
+sigma = 0.0025  # the one in units S/m
 impedance1 = 120 * math.pi  # Impedance of material one (default for air)
 
-GOOD_CONDUCTOR_THRESHOLD = 5 # Can change if you want
+GOOD_CONDUCTOR_THRESHOLD = 100 # Can change if you want
 LOW_LOSS_MEDIUM_THRESHOLD = 0.01
 
 omega = 2 * math.pi * freq
-epsilon_dash_dash = sigma
-epsilon_dash = omega * epsilon_relative * 8.85 * 10**-12
+epsilon_dash_dash = sigma / omega
+epsilon_dash = epsilon_relative * 8.85 * 10**-12
 
 thresh = epsilon_dash_dash / epsilon_dash
 

@@ -2,8 +2,8 @@ import math
 import cmath
 import numpy
 
-numerator = 300
-denominator = complex(96.58, -8.12)
+numerator = complex(0.8886 - 120 * math.pi, 0.8886)
+denominator = complex(0.8886 + 120 * math.pi, 0.8886)
 
 result = numerator / denominator
 
