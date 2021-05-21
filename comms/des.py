@@ -1,4 +1,4 @@
-# VALUES TO CHANGE START ON LINE 260
+# VALUES TO CHANGE START ON LINE 160
 
 p10 = [3, 5, 2, 7, 4, 10, 1, 9, 8, 6]
 p8 = [6, 3, 7, 4, 8, 5, 10, 9]
@@ -29,6 +29,7 @@ def put_through_blocks(mode, input_to_ip, first_fk_key, second_fk_key):
 
     if mode == 'cbc' and encode:
         input_to_ip = ['0' if input_to_ip[i] == prev_bits[i] else '1' for i, value in enumerate(input_to_ip)]
+        print(f'After XOR with previous ciphertext: {input_to_ip}')
     elif mode == 'cfm':
         actual_plaintext = input_to_ip
         input_to_ip = prev_bits
@@ -145,20 +146,26 @@ def put_through_blocks(mode, input_to_ip, first_fk_key, second_fk_key):
     for index, value in enumerate(ip_inverse):
         result[index] = storage_vector[value - 1]
 
+    print(f'After IP ^ -1: {result}')
+
     if mode == 'cbc' and not encode:
+        print('XOR with previous ciphertext')
         result = ['0' if result[i] == prev_bits[i] else '1' for i,value in enumerate(result)]
     elif mode == 'cfm':
+        if encode:
+            print('XOR with plaintext')
+        else:
+            print('XOR with ciphertext')
         result = ['0' if result[i] == actual_plaintext[i] else '1' for i,value in enumerate(result)]
 
     print(f'\nRESULT: {result}')
 
 
-
 if __name__ == '__main__':
-    eight_bit_plaintext = '10101010' # Put the plaintext in here if encoding/ Ciphertext if decoding
-    ten_bit_key = '0011110101'
-    prev = '10110100'
-    ecm_or_cbc_or_what = 'cfm' # 'ecm' 'cbc' 'cfm'
+    eight_bit_plaintext = '11010111' # Put the plaintext in here if encoding/ Ciphertext if decoding
+    ten_bit_key = '1100110111'
+    prev = '10110110'
+    ecm_or_cbc_or_what = 'cbc' # 'ecm' 'cbc' 'cfm'
     encode = False
 
     if ecm_or_cbc_or_what == 'cfm':
