@@ -1,7 +1,8 @@
-e = 25
-n = 221
-c = 2
-
+e = 7
+n = 55
+c = 37 # USE IF DECRYTPING
+m = 23 # USE IF ENCRYPTING
+encrypting = True # TRUE IF ENCRYTPING/ FLASE IF DECRYPTING
 
 # def not stolen
 def prime_factors(n):
@@ -51,7 +52,13 @@ if __name__ == '__main__':
         print(f'{i} * {mod_for_d} = {multiple_of_mod}, {multiple_of_mod} + 1 = {multiple_of_mod_plus_one}, Divisible by e = {True if multiple_of_mod_plus_one % e == 0 else False} ({multiple_of_mod_plus_one}/{e}={multiple_of_mod_plus_one/e})')
     print(f'PRIVATE D = {d}')
 
-    print('\nDECIPHERING CIPHER TEXT:')
-    print('m = c^d mod n')
-    print(f'm = {c}^{d} mod {n}')
-    print(f'Answer = {pow(c, d, n)}')
+    if encrypting:
+        print('\nIGNORE ABOVE\nENCRYPTING MESSAGE TEXT:')
+        print('c = m^e mod n')
+        print(f'c = {m}^{e} mod {n}')
+        print(f'Answer: c = {pow(m, e, n)}')
+    else:
+        print('\nDECIPHERING CIPHER TEXT:')
+        print('m = c^d mod n')
+        print(f'm = {c}^{d} mod {n}')
+        print(f'Answer: m = {pow(c, d, n)}')
